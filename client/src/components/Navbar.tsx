@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
     // Get user typed a url or a video id or just a search query
     const option: string = query.includes("video-url: ") ?
       "url" : query.includes("video-id: ") ?
-        "id" : "search";
+        "id" : query.includes("search: ") ? "search" : "";
 
     switch (option) {
       case "url":
