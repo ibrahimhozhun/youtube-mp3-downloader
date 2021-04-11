@@ -1,0 +1,25 @@
+{
+  "short_name": "MP3 Downloader",
+  "name": "MP3 Downloader",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "800x800.png",
+      "type": "image/png",
+      "sizes": "800x800"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
