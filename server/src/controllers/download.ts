@@ -43,7 +43,8 @@ export default async (req: Request, res: Response) => {
       quality: 'highestaudio'
     });
 
-    downloadCover(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`, `${__dirname}/${title}.jpg`);
+    // Download cover image
+    downloadCover(`https://i.ytimg.com/vi/${videoDetails.videoId}/hqdefault.jpg`, `${__dirname}/${title}.jpg`);
 
     // Convert audio to mp3 format
     ffmpeg(audio)
@@ -51,13 +52,13 @@ export default async (req: Request, res: Response) => {
       .audioBitrate(128)
       .save(`${__dirname}/${title}.mp3`)
       .on("end", () => {
-        // Metadata to write
-        let metadata: IMetadata;
+        console.log("Audio file converted to mp3 format");
 
         // Title and author variables to write metadata
         const song = extractTitleAndArtist(title);
 
-        metadata = {
+        // Metadata to write song
+        const metadata = {
           title: song.title,
           // If we don't have a artist name on video title we get channel name as the artist
           // but youtube has 'Topics' and we don't wanna write it to metadata
@@ -71,7 +72,9 @@ export default async (req: Request, res: Response) => {
 
         try {
           // Write metadata to song
-          const result: boolean | Error = NodeID3.write(metadata, `${__dirname}/${title}.mp3`);
+          const result: true | Error = NodeID3.write(metadata, `${__dirname}/${title}.mp3`);
+          if (result === true) console.log("Metadata written to song");
+          else console.log("Metadata has not been written.\nIssue: " + result);
 
           // Send song file to client
           res.download(`${__dirname}/${title}.mp3`, (err) => {
@@ -91,8 +94,8 @@ export default async (req: Request, res: Response) => {
           res.status(400).json({ error });
         }
       });
-  } catch (err) {
-    console.error(err);
-    res.end();
+  } catch (error) {
+    console.error(error);
+    res.json({ error });
   }
 }
