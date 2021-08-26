@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap);
 /* Noto Sans font family */
 
-*{
-  font-family: 'Noto Sans', sans-serif;
+* {
+  font-family: "Noto Sans", sans-serif;
 }
 
-html{
+html {
   --input-group-bg: rgba(255, 255, 255, 0.2);
   --blur: blur(4px);
 }
@@ -15,10 +15,10 @@ body {
   background: #b92b27;
   /* Chrome 10-25, Safari 5.1-6 */
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #1565C0, #b92b27);
+  background: linear-gradient(to right, #1565c0, #b92b27);
 }
 
-.main{
+.main {
   display: grid;
   grid-row-gap: 3vh;
   row-gap: 3vh;
@@ -26,35 +26,31 @@ body {
   margin-bottom: 2vh;
 }
 
-.title{
+.title {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: center;
-          justify-content: center;
+  justify-content: center;
   -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
   text-align: center;
 }
 
-.song-grid{
+.song-grid {
   display: grid;
   place-items: center;
   grid-template-columns: repeat(9, 1fr);
   grid-template-areas: ". . video video info info . . .";
   grid-column-gap: 4vh;
   -webkit-column-gap: 4vh;
-          column-gap: 4vh;
+  column-gap: 4vh;
   padding-bottom: 2vh;
-  box-shadow: 
-    0 3px 3px rgba(0, 0, 0, 0.034),
-    0 7px 6px rgba(0, 0, 0, 0.048),
-    0 13px 10px rgba(0, 0, 0, 0.06),
-    0 23px 18px rgba(0, 0, 0, 0.072)
-  ;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.034), 0 7px 6px rgba(0, 0, 0, 0.048),
+    0 13px 10px rgba(0, 0, 0, 0.06), 0 23px 18px rgba(0, 0, 0, 0.072);
   border-radius: 50px;
 }
 
-.song-video{
+.song-video {
   grid-area: video;
   justify-self: flex-end;
   width: 300px;
@@ -62,31 +58,30 @@ body {
   border-radius: 24px;
 }
 
-.song-info{
+.song-info {
   grid-area: info;
   display: grid;
   place-self: stretch;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: 
+  grid-template-areas:
     "title title title"
-    "artist dl-btn dl-btn"
-  ;
+    "artist dl-btn dl-btn";
 }
 
-.song-title{
+.song-title {
   grid-area: title;
   align-self: flex-end;
   font-weight: 500;
   font-size: 2em;
 }
 
-.song-artist{
+.song-artist {
   grid-area: artist;
   align-self: center;
   font-weight: 300;
 }
 
-.download-btn{
+.download-btn {
   grid-area: dl-btn;
   align-self: center;
   padding: 2vh;
@@ -96,22 +91,22 @@ body {
   cursor: pointer;
 }
 
-.download-btn button{
+.download-btn button {
   background-color: #32817d;
 }
 
-.download-btn button:hover{
+.download-btn button:hover {
   background-color: #3b9994;
 }
 
-.navbar{
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: transparent;
 }
 
-.navbar-grid{
+.navbar-grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-areas: ". . input input input btn . .";
@@ -119,38 +114,38 @@ body {
   margin-top: 5px;
 }
 
-.input-field{
+.input-field {
   border-radius: 10px 0px 0px 10px;
   border: none;
   background: rgba(255, 255, 255, 0.2);
   background: var(--input-group-bg);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: var(--blur);
-          backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
   grid-area: input;
   padding: 8px;
 }
 
-.btn-div{
+.btn-div {
   grid-area: btn;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: flex-end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
   padding-right: 10px;
   background: rgba(255, 255, 255, 0.2);
   background: var(--input-group-bg);
   -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: var(--blur);
-          backdrop-filter: var(--blur);
+  backdrop-filter: var(--blur);
   border-radius: 0px 10px 10px 0px;
 }
 
-.submit-btn{
+.submit-btn {
   background: transparent;
   color: #b8bac7;
   cursor: pointer;
@@ -158,87 +153,92 @@ body {
   border: none;
 }
 
-.loader{
+.loader {
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
-@media only screen and (orientation: landscape) and (max-width: 900px){
-  .main{
+@media only screen and (orientation: landscape) and (max-width: 900px) {
+  .main {
     margin-top: 15vh;
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .song-grid{
+  .song-grid {
     grid-template-areas: ". . video video info info info . .";
-  }  
-}
-
-@media only screen and (max-width: 900px){
-  .song-grid{
-    grid-template-areas: ". . video video info info info info ."
   }
 }
 
-@media only screen and (max-width: 750px){
-  .song-grid{
-    grid-template-areas: ". . video video video info info info ."
+@media only screen and (max-width: 900px) {
+  .song-grid {
+    grid-template-areas: ". . video video info info info info .";
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .song-grid {
+    grid-template-areas: ". . video video video info info info .";
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .song-info{
+  .song-info {
     grid-template-columns: repeat(7, 1fr);
-    grid-template-areas: 
-    ". title title title title title ."
-    ". artist artist dl-btn dl-btn dl-btn ."
-    ;
+    grid-template-areas:
+      ". title title title title title ."
+      ". artist artist dl-btn dl-btn dl-btn .";
   }
 
-  .song-video{
+  .song-video {
     place-self: center;
-  } 
+  }
 
   .song-grid {
     grid-template-columns: 1fr;
     grid-template-areas: "info" "video";
   }
 
-  .navbar-grid{
+  .navbar-grid {
     grid-template-columns: repeat(9, 1fr);
     grid-template-areas: ". input input input input input input btn .";
   }
 }
 
-:focus{
+:focus {
   outline: none;
 }
 
-::-webkit-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #333111;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #333111;
   opacity: 1; /* Firefox */
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #333111;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: #333111;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: #333111;
 }
 
@@ -252,22 +252,19 @@ input::-webkit-calendar-picker-indicator {
 }
 
 /* Custom scrollbar properties */
-::-webkit-scrollbar-track
-{
-	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #b92b27; 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #b92b27;
 }
 
-::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #b92b27;
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #b92b27;
 }
 
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #32817d;
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #32817d;
 }
