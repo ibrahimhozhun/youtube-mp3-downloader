@@ -24,7 +24,7 @@ const downloadCover = async (url: string, filePath: string) => {
     await data.pipe(fs.createWriteStream(filePath));
     console.log("Cover successfully downloaded");
   } catch (err) {
-    throw new Error(err);
+    console.log(err);
   }
 };
 

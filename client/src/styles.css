@@ -154,13 +154,8 @@ body {
 }
 
 .loader {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
 @media only screen and (orientation: landscape) and (max-width: 900px) {
