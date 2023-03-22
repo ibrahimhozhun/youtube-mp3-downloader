@@ -1,6 +1,6 @@
-### Try this project [here](https://mp3-downloader.web.app/)
+### Try this project [here](https://quick-mp3.web.app)
 
-> Server might be slow at first requests. I use free version of [Heroku](https://www.heroku.com/) for server and it sleeps when there's no requests. So restarting server takes time.
+> Server might be slow at first requests. I use free version of [Render](https://www.render.com/) for server and it sleeps when there's no requests. So restarting server takes time.
 
 # Description
 
@@ -80,5 +80,5 @@ yarn start
 # Hosting
 
 For client I use [Firebase Hosting](https://firebase.google.com/products/hosting)\
-For server I use [Heroku](https://www.heroku.com/)\
+For server I use [Render](https://www.render.com/)\
 I recommend both of them. They're free for little projects and using them is very simple.
