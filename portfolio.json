@@ -1,4 +1,10 @@
 {
   "title": "YouTube MP3 Downloader",
-  "short_description": "A robust web utility that processes media streams. It extracts audio using ytdl-core, converts formats via FFmpeg, injects metadata, and serves the downloadable MP3 directly to the client."
+  "short_description": "A robust web utility that processes media streams. It extracts audio using ytdl-core, converts formats via FFmpeg, injects metadata, and serves the downloadable MP3 directly to the client.",
+  "tech_stack": [
+    "React.js",
+    "Node.js",
+    "FFmpeg",
+    "TypeScript"
+  ],
 }
